@@ -267,7 +267,16 @@ namespace calculator
         private void buttonDelete_Click(object sender, RoutedEventArgs e)
         {
             string st = this.display.Text;
-            this.display.Text = st.Substring(0,st.Length-1);
+            if (st.Length > 1)
+            {
+                this.display.Text = st.Substring(0, st.Length - 1);
+            }
+            else
+            {
+
+                this.display.Text = "";
+                this.display2.Text = "";
+            }
         }
 
        
