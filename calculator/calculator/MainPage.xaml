@@ -8,7 +8,28 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Grid Margin="0,2,0,-2">
 
+        <Button x:Name="button1" Content="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,468,0,0" Height="70" Width="70" MinWidth="50" MinHeight="50" Click="button1_Click" Background="#FF1D1B1B" BorderThickness="0"/>
+        <Button x:Name="button2" Content="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,468,0,0" Width="70" Height="70" MinWidth="50" MinHeight="50" Click="button2_Click" Background="#FF1D1B1B" BorderThickness="0"/>
+        <Button x:Name="button3" Content="3" HorizontalAlignment="Left" VerticalAlignment="Top" Height="70" Width="70" Margin="198,468,0,0" MinWidth="50" MinHeight="50" Click="button3_Click" Background="#FF1D1B1B" BorderThickness="0"/>
+        <Button x:Name="button4" Content="4" HorizontalAlignment="Left" VerticalAlignment="Top" Height="70" Width="70" Margin="20,405,0,0" MinWidth="50" MinHeight="50" Click="button4_Click" Background="#FF1D1B1B" BorderThickness="0"/>
+        <Button x:Name="button5" Content="5" HorizontalAlignment="Left" VerticalAlignment="Top" Height="70" Margin="110,405,0,0" Width="70" MinHeight="50" MinWidth="50" Click="button5_Click" Background="#FF1D1B1B" BorderThickness="0"/>
+        <Button x:Name="button6" Content="6" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="198,405,0,0" Height="70" Width="70" MinWidth="50" MinHeight="50" Click="button6_Click" Background="#FF1D1B1B" BorderThickness="0"/>
+        <Button x:Name="button7" Content="7" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,339,0,0" MinWidth="50" MinHeight="50" Width="70" Height="70" Click="button7_Click" Background="#FF1D1B1B" BorderThickness="0"/>
+        <Button x:Name="button8" Content="8" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,339,0,0" MinWidth="50" MinHeight="50" Width="70" Height="70" Click="button8_Click" Background="#FF1D1B1B" BorderThickness="0"/>
+        <Button x:Name="button9" Content="9" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="198,339,0,0" Width="70" Height="70" MinWidth="50" MinHeight="50" Click="button9_Click" Background="#FF1D1B1B" BorderThickness="0"/>
+        <Button x:Name="button0" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,534,0,0" RenderTransformOrigin="0.456,-1.001" Width="160" Height="70" Click="button0_Click" Background="#FF1D1B1B" BorderThickness="0"/>
+        <Button x:Name="buttonResult" Content="=" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="286,534,0,0" MinWidth="50" MinHeight="50" Width="70" Height="70" Background="#FF575353" Click="buttonResult_Click" BorderThickness="0"/>
+        <Button x:Name="buttonAdd" Content="+" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="286,468,0,0" MinWidth="50" MinHeight="50" Width="70" Height="70" Background="#FF575353" Click="buttonAdd_Click" BorderThickness="0"/>
+        <Button x:Name="buttonSubtract" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="286,405,0,0" MinWidth="50" MinHeight="50" Width="70" Height="70" Background="#FF575353" Click="buttonSubtract_Click" BorderThickness="0"/>
+        <Button x:Name="buttonMultiply" Content="*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="286,339,0,0" MinWidth="50" MinHeight="50" Width="70" Height="70" Background="#FF575353" Click="buttonMultiply_Click" BorderThickness="0"/>
+        <Button x:Name="buttonDivide" Content="/" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="285,271,0,0" MinWidth="50" MinHeight="50" Width="70" Height="70" Background="#FF575353" Click="buttonDivide_Click" BorderThickness="0"/>
+        <Button x:Name="buttonDecimal" Content="." HorizontalAlignment="Left" VerticalAlignment="Top" Margin="198,534,0,0" MinWidth="50" MinHeight="50" Width="70" Height="70" Click="buttonDecimal_Click" Background="#FF1D1B1B" BorderThickness="0"/>
+        <Button x:Name="buttonClear" Content="C" HorizontalAlignment="Left" VerticalAlignment="Top" MinWidth="50" MinHeight="50" Width="70" Height="70" Margin="20,271,0,0" Background="#FF575353" Click="buttonClear_Click" BorderThickness="0"/>
+        <Button x:Name="buttonDelete" Content="DEL" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,271,0,0" MinWidth="50" MinHeight="50" Width="70" Height="70" Background="#FF575353" BorderThickness="0" Click="buttonDelete_Click"/>
+        <Button x:Name="buttonPercent" Content="%" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="198,271,0,0" MinWidth="50" MinHeight="50" Width="70" Height="70" Background="#FF575353" BorderThickness="0" Click="buttonPercent_Click"/>
+        <TextBox x:Name="display" HorizontalAlignment="Left" Margin="20,174,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="335" Height="76" Background="Black" BorderThickness="0" Foreground="White" FontSize="36"/>
+        <TextBox x:Name="display2" HorizontalAlignment="Left" Margin="20,119,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="335" Background="Black" BorderThickness="0" Foreground="White"/>
     </Grid>
 </Page>

@@ -22,6 +22,11 @@ namespace calculator
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        float num1 = 0,num2=0, result=0;
+      
+        char operation;
+       
+        //this.display.Text = "";
         public MainPage()
         {
             this.InitializeComponent();
@@ -44,5 +49,227 @@ namespace calculator
             // If you are using the NavigationHelper provided by some templates,
             // this event is handled for you.
         }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.display.Text == "+" || this.display.Text == "-" || this.display.Text == "*" || this.display.Text == "/" || this.display.Text == "%")
+            {
+                this.display2.Text = this.display.Text;
+                this.display.Text = "";
+                this.display.Text = this.display.Text + this.button1.Content;
+            }
+            else
+                
+                this.display.Text = this.display.Text + this.button1.Content;
+           
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.display.Text == "+" || this.display.Text == "-" || this.display.Text == "*" || this.display.Text == "/" || this.display.Text == "%")
+            {
+                this.display2.Text =  this.display.Text;
+                this.display.Text = "";
+                this.display.Text = this.display.Text + this.button2.Content;
+            }
+            else
+                this.display.Text = this.display.Text + this.button2.Content;
+        }
+
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.display.Text == "+" || this.display.Text == "-" || this.display.Text == "*" || this.display.Text == "/" || this.display.Text == "%")
+            {
+                this.display2.Text = this.display.Text;
+                this.display.Text = "";
+                this.display.Text = this.display.Text + this.button3.Content;
+            }
+            else
+                this.display.Text = this.display.Text + this.button3.Content;
+        }
+
+        private void button4_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.display.Text == "+" || this.display.Text == "-" || this.display.Text == "*" || this.display.Text == "/" || this.display.Text == "%")
+            {
+                this.display2.Text = this.display.Text;
+                this.display.Text = "";
+                this.display.Text = this.display.Text + this.button4.Content;
+            }
+            else
+                this.display.Text = this.display.Text + this.button4.Content;
+        }
+
+        private void button5_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.display.Text == "+" || this.display.Text == "-" || this.display.Text == "*" || this.display.Text == "/" || this.display.Text == "%")
+            {
+                this.display2.Text = this.display.Text;
+                this.display.Text = "";
+                this.display.Text = this.display.Text + this.button5.Content;
+            }
+            else
+                this.display.Text = this.display.Text + this.button5.Content;
+        }
+
+        private void button6_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.display.Text == "+" || this.display.Text == "-" || this.display.Text == "*" || this.display.Text == "/" || this.display.Text == "%")
+            {
+                this.display2.Text = this.display.Text;
+                this.display.Text = "";
+                this.display.Text = this.display.Text + this.button6.Content;
+            }
+            else
+                this.display.Text = this.display.Text + this.button6.Content;
+        }
+
+        private void button7_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.display.Text == "+" || this.display.Text == "-" || this.display.Text == "*" || this.display.Text == "/" || this.display.Text == "%")
+            {
+                this.display2.Text = this.display.Text;
+                this.display.Text = "";
+                this.display.Text = this.display.Text + this.button7.Content;
+            }
+            else
+                this.display.Text = this.display.Text + this.button7.Content;
+        }
+
+        private void button8_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.display.Text == "+" || this.display.Text == "-" || this.display.Text == "*" || this.display.Text == "/" || this.display.Text == "%")
+            {
+                this.display2.Text = this.display.Text;
+                this.display.Text = "";
+                this.display.Text = this.display.Text + this.button8.Content;
+            }
+            else
+                this.display.Text = this.display.Text + this.button8.Content;
+        }
+
+        private void button9_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.display.Text == "+" || this.display.Text == "-" || this.display.Text == "*" || this.display.Text == "/" || this.display.Text == "%")
+            {
+                this.display2.Text = this.display.Text;
+                this.display.Text = "";
+                this.display.Text = this.display.Text + this.button9.Content;
+            }
+            else
+                this.display.Text = this.display.Text + this.button9.Content;
+        }
+        private void buttonDecimal_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.display.Text == "+" || this.display.Text == "-" || this.display.Text == "*" || this.display.Text == "/" || this.display.Text == "%")
+            {
+                this.display2.Text = this.display.Text;
+                this.display.Text = "";
+                this.display.Text = this.display.Text + this.buttonDecimal.Content;
+            }
+            else
+            this.display.Text = this.display.Text + this.buttonDecimal.Content;
+        }
+
+        private void button0_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.display.Text == "+" || this.display.Text == "-" || this.display.Text == "*" || this.display.Text == "/" || this.display.Text == "%")
+            {
+                this.display2.Text = this.display.Text;
+                this.display.Text = "";
+                this.display.Text = this.display.Text + this.button0.Content;
+            }
+            else
+                this.display.Text = this.display.Text + this.button0.Content;
+        }
+
+             private void buttonAdd_Click(object sender, RoutedEventArgs e)
+        {
+            num1 = float.Parse(display.Text);
+            this.display2.Text = this.display.Text + this.buttonAdd.Content;
+           this.display.Text = "";
+          //  this.display.Text = this.display.Text + this.buttonAdd.Content;
+
+            result = +num1;
+            operation = '+';
+        }
+
+        private void buttonSubtract_Click(object sender, RoutedEventArgs e)
+        {
+            num1 = float.Parse(display.Text);
+            this.display2.Text = this.display.Text + this.buttonSubtract.Content;
+            this.display.Text = "";
+           // this.display.Text = this.display.Text + this.buttonSubtract.Content;
+            operation = '-';
+        }
+
+        private void buttonMultiply_Click(object sender, RoutedEventArgs e)
+        {
+            num1 = float.Parse(display.Text);
+            this.display2.Text = this.display.Text + this.buttonMultiply.Content;
+            this.display.Text = "";
+           // this.display.Text = this.display.Text + this.buttonMultiply.Content;
+            operation = '*';
+        }
+
+        private void buttonDivide_Click(object sender, RoutedEventArgs e)
+        {
+            num1 = float.Parse(display.Text);
+            this.display2.Text = this.display.Text + this.buttonDivide.Content;
+            this.display.Text = "";
+          //  this.display.Text = this.display.Text + this.buttonDivide.Content;
+            operation = '/';
+        }
+        private void buttonPercent_Click(object sender, RoutedEventArgs e)
+        {
+            num1 = float.Parse(display.Text);
+            this.display2.Text = this.display.Text + this.buttonPercent.Content;
+            this.display.Text = "";
+          //  this.display.Text = this.display.Text + this.buttonPercent.Content;
+            operation = '%';
+        }
+        private void buttonResult_Click(object sender, RoutedEventArgs e)
+        {
+            this.display2.Text = this.display2.Text + this.display.Text;
+            //this.display.Text = "";
+            num2 = float.Parse(display.Text);
+            if (operation == '+')
+            {
+                result = num1 + num2;
+            }
+            else if (operation == '-')
+            {
+                result = num1 - num2;
+            }
+            else if (operation == '*')
+            {
+                result = num1 * num2;
+            }
+            else if (operation == '/')
+            {
+                result = num1 / num2;
+            }
+            else if (operation == '%')
+            {
+                result = num1 / num2*100;
+            }
+            this.display.Text = result.ToString();
+
+        }
+
+        private void buttonClear_Click(object sender, RoutedEventArgs e)
+        {
+
+            this.display.Text = "";
+            this.display2.Text = "";
+    }
+
+        private void buttonDelete_Click(object sender, RoutedEventArgs e)
+        {
+            string st = this.display.Text;
+            this.display.Text = st.Substring(0,st.Length-1);
+        }
+
+       
     }
 }
