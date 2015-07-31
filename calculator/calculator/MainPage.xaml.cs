@@ -22,8 +22,8 @@ namespace calculator
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        float num1 = 0,num2=0, result=0;
-      
+        float num1 = 0,num2=0, result=0,i=0;
+      string str = "";
         char operation;
        
         //this.display.Text = "";
@@ -52,19 +52,38 @@ namespace calculator
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
+            if (sender == button1)
+                str = "1";
+            else if (sender == button2)
+                str = "2";
+            else if (sender == button3)
+                str = "3";
+            else if (sender == button4)
+                str = "4";
+            else if (sender == button5)
+                str = "5";
+            else if (sender == button6)
+                str = "6";
+            else if (sender == button7)
+                str = "7";
+            else if (sender == button8)
+                str = "8";
+            else if (sender == button9)
+                str = "9";
+            else str = "0";
             if (this.display.Text == "+" || this.display.Text == "-" || this.display.Text == "*" || this.display.Text == "/" || this.display.Text == "%")
             {
                 this.display2.Text = this.display.Text;
                 this.display.Text = "";
-                this.display.Text = this.display.Text + this.button1.Content;
+                this.display.Text = this.display.Text + str;
             }
             else
-                
-                this.display.Text = this.display.Text + this.button1.Content;
+
+                this.display.Text = this.display.Text + str;
            
         }
 
-        private void button2_Click(object sender, RoutedEventArgs e)
+      /*  private void button2_Click(object sender, RoutedEventArgs e)
         {
             if (this.display.Text == "+" || this.display.Text == "-" || this.display.Text == "*" || this.display.Text == "/" || this.display.Text == "%")
             {
@@ -158,7 +177,7 @@ namespace calculator
             }
             else
                 this.display.Text = this.display.Text + this.button9.Content;
-        }
+        }*/
         private void buttonDecimal_Click(object sender, RoutedEventArgs e)
         {
             if (this.display.Text == "+" || this.display.Text == "-" || this.display.Text == "*" || this.display.Text == "/" || this.display.Text == "%")
@@ -171,7 +190,7 @@ namespace calculator
             this.display.Text = this.display.Text + this.buttonDecimal.Content;
         }
 
-        private void button0_Click(object sender, RoutedEventArgs e)
+        /*private void button0_Click(object sender, RoutedEventArgs e)
         {
             if (this.display.Text == "+" || this.display.Text == "-" || this.display.Text == "*" || this.display.Text == "/" || this.display.Text == "%")
             {
@@ -181,7 +200,7 @@ namespace calculator
             }
             else
                 this.display.Text = this.display.Text + this.button0.Content;
-        }
+        }*/
 
              private void buttonAdd_Click(object sender, RoutedEventArgs e)
         {
