@@ -8,28 +8,46 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid Margin="0,2,0,-2">
-
-        <Button x:Name="button1" Content="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,468,0,0" Height="70" Width="70" MinWidth="50" MinHeight="50" Click="button1_Click" Background="#FF1D1B1B" BorderThickness="0" Tag="1"/>
-        <Button x:Name="button2" Content="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,468,0,0" Width="70" Height="70" MinWidth="50" MinHeight="50" Click="button1_Click" Background="#FF1D1B1B" BorderThickness="0" Tag="2"/>
-        <Button x:Name="button3" Content="3" HorizontalAlignment="Left" VerticalAlignment="Top" Height="70" Width="70" Margin="198,468,0,0" MinWidth="50" MinHeight="50" Click="button1_Click" Background="#FF1D1B1B" BorderThickness="0" Tag="3"/>
-        <Button x:Name="button4" Content="4" HorizontalAlignment="Left" VerticalAlignment="Top" Height="70" Width="70" Margin="20,405,0,0" MinWidth="50" MinHeight="50" Click="button1_Click" Background="#FF1D1B1B" BorderThickness="0" Tag="4"/>
-        <Button x:Name="button5" Content="5" HorizontalAlignment="Left" VerticalAlignment="Top" Height="70" Margin="110,405,0,0" Width="70" MinHeight="50" MinWidth="50" Click="button1_Click" Background="#FF1D1B1B" BorderThickness="0" Tag="5"/>
-        <Button x:Name="button6" Content="6" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="198,405,0,0" Height="70" Width="70" MinWidth="50" MinHeight="50" Click="button1_Click" Background="#FF1D1B1B" BorderThickness="0" Tag="6"/>
-        <Button x:Name="button7" Content="7" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,339,0,0" MinWidth="50" MinHeight="50" Width="70" Height="70" Click="button1_Click" Background="#FF1D1B1B" BorderThickness="0" Tag="7"/>
-        <Button x:Name="button8" Content="8" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,339,0,0" MinWidth="50" MinHeight="50" Width="70" Height="70" Click="button1_Click" Background="#FF1D1B1B" BorderThickness="0" Tag="8"/>
-        <Button x:Name="button9" Content="9" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="198,339,0,0" Width="70" Height="70" MinWidth="50" MinHeight="50" Click="button1_Click" Background="#FF1D1B1B" BorderThickness="0" Tag="9"/>
-        <Button x:Name="button0" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,534,0,0" RenderTransformOrigin="0.456,-1.001" Width="160" Height="70" Click="button1_Click" Background="#FF1D1B1B" BorderThickness="0" Tag="0"/>
-        <Button x:Name="buttonResult" Content="=" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="286,534,0,0" MinWidth="50" MinHeight="50" Width="70" Height="70" Background="#FF575353" Click="buttonResult_Click" BorderThickness="0"/>
-        <Button x:Name="buttonAdd" Content="+" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="286,468,0,0" MinWidth="50" MinHeight="50" Width="70" Height="70" Background="#FF575353" Click="buttonAdd_Click" BorderThickness="0"/>
-        <Button x:Name="buttonSubtract" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="286,405,0,0" MinWidth="50" MinHeight="50" Width="70" Height="70" Background="#FF575353" Click="buttonSubtract_Click" BorderThickness="0"/>
-        <Button x:Name="buttonMultiply" Content="*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="286,339,0,0" MinWidth="50" MinHeight="50" Width="70" Height="70" Background="#FF575353" Click="buttonMultiply_Click" BorderThickness="0"/>
-        <Button x:Name="buttonDivide" Content="/" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="285,271,0,0" MinWidth="50" MinHeight="50" Width="70" Height="70" Background="#FF575353" Click="buttonDivide_Click" BorderThickness="0"/>
-        <Button x:Name="buttonDecimal" Content="." HorizontalAlignment="Left" VerticalAlignment="Top" Margin="198,534,0,0" MinWidth="50" MinHeight="50" Width="70" Height="70" Click="buttonDecimal_Click" Background="#FF1D1B1B" BorderThickness="0"/>
-        <Button x:Name="buttonClear" Content="C" HorizontalAlignment="Left" VerticalAlignment="Top" MinWidth="50" MinHeight="50" Width="70" Height="70" Margin="20,271,0,0" Background="#FF575353" Click="buttonClear_Click" BorderThickness="0"/>
-        <Button x:Name="buttonDelete" Content="DEL" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,271,0,0" MinWidth="50" MinHeight="50" Width="70" Height="70" Background="#FF575353" BorderThickness="0" Click="buttonDelete_Click"/>
-        <Button x:Name="buttonPercent" Content="%" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="198,271,0,0" MinWidth="50" MinHeight="50" Width="70" Height="70" Background="#FF575353" BorderThickness="0" Click="buttonPercent_Click"/>
-        <TextBox x:Name="display" HorizontalAlignment="Left" Margin="20,174,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="335" Height="76" Background="Black" BorderThickness="0" Foreground="White" FontSize="36"/>
-        <TextBox x:Name="display2" HorizontalAlignment="Left" Margin="20,119,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="335" Background="Black" BorderThickness="0" Foreground="White"/>
+    <Grid Margin="0,2,0,-2" Background="Beige">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="166.667" />
+            <RowDefinition Height="105"/>
+            <RowDefinition Height="66.666"/>
+            <RowDefinition Height="65"/>
+            <RowDefinition Height="66.667"/>
+            <RowDefinition Height="66.667"/>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="Auto" MinHeight="67.5" />
+            <RowDefinition Height="0*" />
+            <RowDefinition Height="35.5" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="101.667" />
+            <ColumnDefinition Width="86.666"/>
+            <ColumnDefinition Width="88.334"/>
+            <ColumnDefinition Width="108.333"/>
+            <ColumnDefinition Width="170.833" />
+        </Grid.ColumnDefinitions>
+        <Button Grid.Row="4" Grid.Column="0" x:Name="button1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,64.667,0,0" Height="70" Width="70" MinWidth="50" MinHeight="50" Click="button1_Click" Background="#FF1D1B1B" BorderThickness="0" Tag="1" Grid.RowSpan="4">1</Button>
+        <Button Grid.Row="4" Grid.Column="1" x:Name="button2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="8.333,64.667,0,0" Width="70" Height="70" MinWidth="50" MinHeight="50" Click="button1_Click" Background="#FF1D1B1B" BorderThickness="0" Tag="2" Grid.RowSpan="4">2</Button>
+        <Button Grid.Row="4" Grid.Column="2" x:Name="button3" HorizontalAlignment="Left" VerticalAlignment="Top" Height="70" Width="70" Margin="9.667,64.667,0,0" MinWidth="50" MinHeight="50" Click="button1_Click" Background="#FF1D1B1B" BorderThickness="0" Tag="3" Grid.RowSpan="4">3</Button>
+        <Button Grid.Row="4" Grid.Column="0" x:Name="button4" HorizontalAlignment="Left" VerticalAlignment="Top" Height="70" Width="70" Margin="20,1.667,0,0" MinWidth="50" MinHeight="50" Click="button1_Click" Background="#FF1D1B1B" BorderThickness="0" Tag="4" Grid.RowSpan="2">4</Button>
+        <Button Grid.Row="4" Grid.Column="1" x:Name="button5" HorizontalAlignment="Left" VerticalAlignment="Top" Height="70" Margin="8.333,1.667,0,0" Width="70" MinHeight="50" MinWidth="50" Click="button1_Click" Background="#FF1D1B1B" BorderThickness="0" Tag="5" Grid.RowSpan="2">5</Button>
+        <Button Grid.Row="4" Grid.Column="2" x:Name="button6" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="9.667,1.667,0,0" Height="70" Width="70" MinWidth="50" MinHeight="50" Click="button1_Click" Background="#FF1D1B1B" BorderThickness="0" Tag="6" Grid.RowSpan="2">6</Button>
+        <Button Grid.Row="3" Grid.Column="0" x:Name="button7" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0.667,0,0" MinWidth="50" MinHeight="50" Width="70" Height="70" Click="button1_Click" Background="#FF1D1B1B" BorderThickness="0" Tag="7" Grid.RowSpan="2">7</Button>
+        <Button Grid.Row="3" Grid.Column="1" x:Name="button8" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="8.333,0.667,0,0" MinWidth="50" MinHeight="50" Width="70" Height="70" Click="button1_Click" Background="#FF1D1B1B" BorderThickness="0" Tag="8" Grid.RowSpan="2">8</Button>
+        <Button Grid.Row="3" Grid.Column="2" x:Name="button9" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="9.667,0.667,0,0" Width="70" Height="70" MinWidth="50" MinHeight="50" Click="button1_Click" Background="#FF1D1B1B" BorderThickness="0" Tag="9" Grid.RowSpan="2">9</Button>
+        <Button Grid.Row="5" Grid.Column="0" x:Name="button0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,64,0,0" RenderTransformOrigin="0.456,-1.001" Width="160" Height="70" Click="button1_Click" Background="#FF1D1B1B" BorderThickness="0" Tag="0" Grid.RowSpan="3" Grid.ColumnSpan="2">0</Button>
+        <Button Grid.Row="5" Grid.Column="3" x:Name="buttonResult" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="9.333,64,0,0" MinWidth="50" MinHeight="50" Width="70" Height="70" Background="#FF575353" Click="buttonResult_Click" BorderThickness="0" Grid.RowSpan="3">=</Button>
+        <Button Grid.Row="4" Grid.Column="3" x:Name="buttonAdd" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="9.333,64.667,0,0" MinWidth="50" MinHeight="50" Width="70" Height="70" Background="#FF575353" Click="buttonAdd_Click" BorderThickness="0" Grid.RowSpan="4">+</Button>
+        <Button Grid.Row="4" Grid.Column="3" x:Name="buttonSubtract" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="9.333,1.667,0,0" MinWidth="50" MinHeight="50" Width="70" Height="70" Background="#FF575353" Click="buttonSubtract_Click" BorderThickness="0" Grid.RowSpan="2">-</Button>
+        <Button Grid.Row="3" Grid.Column="3" x:Name="buttonMultiply" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="9.333,0.667,0,0" MinWidth="50" MinHeight="50" Width="70" Height="70" Background="#FF575353" Click="buttonMultiply_Click" BorderThickness="0" Grid.RowSpan="2">*</Button>
+        <Button Grid.Row="1" Grid.Column="3" x:Name="buttonDivide" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="8.333,104.333,0,0" MinWidth="50" MinHeight="50" Width="70" Height="70" Background="#FF575353" Click="buttonDivide_Click" BorderThickness="0" Grid.RowSpan="3">/</Button>
+        <Button Grid.Row="5" Grid.Column="2" x:Name="buttonDecimal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="9.667,64,0,0" MinWidth="50" MinHeight="50" Width="70" Height="70" Click="buttonDecimal_Click" Background="#FF1D1B1B" BorderThickness="0" Grid.RowSpan="3">.</Button>
+        <Button Grid.Row="1" Grid.Column="0" x:Name="buttonClear" HorizontalAlignment="Left" VerticalAlignment="Top" MinWidth="50" MinHeight="50" Width="70" Height="70" Margin="20,104.333,0,0" Background="#FF575353" Click="buttonClear_Click" BorderThickness="0" Grid.RowSpan="3">C</Button>
+        <Button Grid.Row="1" Grid.Column="1" x:Name="buttonDelete" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="8.333,104.333,0,0" MinWidth="50" MinHeight="50" Width="70" Height="70" Background="#FF575353" BorderThickness="0" Click="buttonDelete_Click" Grid.RowSpan="3">DEL</Button>
+        <Button Grid.Row="1" Grid.Column="2" x:Name="buttonPercent" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="9.667,104.333,0,0" MinWidth="50" MinHeight="50" Width="70" Height="70" Background="#FF575353" BorderThickness="0" Click="buttonPercent_Click" Grid.RowSpan="3">%</Button>
+        <TextBox Grid.Row="1" Grid.Column="0" x:Name="display" HorizontalAlignment="Left" Margin="20,7.333,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="335" Height="76" Background="Black" BorderThickness="0" Foreground="White" FontSize="36" Grid.ColumnSpan="4"/>
+        <TextBox Grid.Row="0" Grid.Column="0" x:Name="display2" HorizontalAlignment="Left" Margin="20,119,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="335" Background="Black" BorderThickness="0" Foreground="White" Height="33" Grid.ColumnSpan="4"/>
     </Grid>
 </Page>
