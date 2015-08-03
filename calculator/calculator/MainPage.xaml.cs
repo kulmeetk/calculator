@@ -52,7 +52,7 @@ namespace calculator
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            if (sender == button1)
+           /* if (sender == button1)
                 str = "1";
             else if (sender == button2)
                 str = "2";
@@ -70,16 +70,21 @@ namespace calculator
                 str = "8";
             else if (sender == button9)
                 str = "9";
-            else str = "0";
+            else str = "0";*/
+            Button btn = (Button)sender;
+
+            str = btn.Name;
+            int len = str.Length;
+           char c = str[len-1]; 
             if (this.display.Text == "+" || this.display.Text == "-" || this.display.Text == "*" || this.display.Text == "/" || this.display.Text == "%")
             {
                 this.display2.Text = this.display.Text;
                 this.display.Text = "";
-                this.display.Text = this.display.Text + str;
+                this.display.Text = this.display.Text + c;
             }
             else
 
-                this.display.Text = this.display.Text + str;
+                this.display.Text = this.display.Text + c;
            
         }
 
