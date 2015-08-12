@@ -22,9 +22,11 @@ namespace calculator
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        float num1 = 0,num2=0, result=0,i=0;
+        decimal num1 = 0,num2=0, result=0 ,i=0,sum=0;
       string str = "";
         char operation;
+       // decimal operate(decimal num1, char operation);
+        //decimal MemoryStore = 0;
        
         //this.display.Text = "";
         public MainPage()
@@ -52,137 +54,29 @@ namespace calculator
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-           /* if (sender == button1)
-                str = "1";
-            else if (sender == button2)
-                str = "2";
-            else if (sender == button3)
-                str = "3";
-            else if (sender == button4)
-                str = "4";
-            else if (sender == button5)
-                str = "5";
-            else if (sender == button6)
-                str = "6";
-            else if (sender == button7)
-                str = "7";
-            else if (sender == button8)
-                str = "8";
-            else if (sender == button9)
-                str = "9";
-            else str = "0";*/
+          
             Button btn = (Button)sender;
 
             str = btn.Name;
             int len = str.Length;
-           char c = str[len-1]; 
+            char c = str[len-1];
             if (this.display.Text == "+" || this.display.Text == "-" || this.display.Text == "*" || this.display.Text == "/" || this.display.Text == "%")
             {
+               
                 this.display2.Text = this.display.Text;
                 this.display.Text = "";
                 this.display.Text = this.display.Text + c;
+                 
             }
             else
-
+            {
                 this.display.Text = this.display.Text + c;
-           
+                
+            }
+          
+            
         }
 
-      /*  private void button2_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.display.Text == "+" || this.display.Text == "-" || this.display.Text == "*" || this.display.Text == "/" || this.display.Text == "%")
-            {
-                this.display2.Text =  this.display.Text;
-                this.display.Text = "";
-                this.display.Text = this.display.Text + this.button2.Content;
-            }
-            else
-                this.display.Text = this.display.Text + this.button2.Content;
-        }
-
-        private void button3_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.display.Text == "+" || this.display.Text == "-" || this.display.Text == "*" || this.display.Text == "/" || this.display.Text == "%")
-            {
-                this.display2.Text = this.display.Text;
-                this.display.Text = "";
-                this.display.Text = this.display.Text + this.button3.Content;
-            }
-            else
-                this.display.Text = this.display.Text + this.button3.Content;
-        }
-
-        private void button4_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.display.Text == "+" || this.display.Text == "-" || this.display.Text == "*" || this.display.Text == "/" || this.display.Text == "%")
-            {
-                this.display2.Text = this.display.Text;
-                this.display.Text = "";
-                this.display.Text = this.display.Text + this.button4.Content;
-            }
-            else
-                this.display.Text = this.display.Text + this.button4.Content;
-        }
-
-        private void button5_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.display.Text == "+" || this.display.Text == "-" || this.display.Text == "*" || this.display.Text == "/" || this.display.Text == "%")
-            {
-                this.display2.Text = this.display.Text;
-                this.display.Text = "";
-                this.display.Text = this.display.Text + this.button5.Content;
-            }
-            else
-                this.display.Text = this.display.Text + this.button5.Content;
-        }
-
-        private void button6_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.display.Text == "+" || this.display.Text == "-" || this.display.Text == "*" || this.display.Text == "/" || this.display.Text == "%")
-            {
-                this.display2.Text = this.display.Text;
-                this.display.Text = "";
-                this.display.Text = this.display.Text + this.button6.Content;
-            }
-            else
-                this.display.Text = this.display.Text + this.button6.Content;
-        }
-
-        private void button7_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.display.Text == "+" || this.display.Text == "-" || this.display.Text == "*" || this.display.Text == "/" || this.display.Text == "%")
-            {
-                this.display2.Text = this.display.Text;
-                this.display.Text = "";
-                this.display.Text = this.display.Text + this.button7.Content;
-            }
-            else
-                this.display.Text = this.display.Text + this.button7.Content;
-        }
-
-        private void button8_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.display.Text == "+" || this.display.Text == "-" || this.display.Text == "*" || this.display.Text == "/" || this.display.Text == "%")
-            {
-                this.display2.Text = this.display.Text;
-                this.display.Text = "";
-                this.display.Text = this.display.Text + this.button8.Content;
-            }
-            else
-                this.display.Text = this.display.Text + this.button8.Content;
-        }
-
-        private void button9_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.display.Text == "+" || this.display.Text == "-" || this.display.Text == "*" || this.display.Text == "/" || this.display.Text == "%")
-            {
-                this.display2.Text = this.display.Text;
-                this.display.Text = "";
-                this.display.Text = this.display.Text + this.button9.Content;
-            }
-            else
-                this.display.Text = this.display.Text + this.button9.Content;
-        }*/
         private void buttonDecimal_Click(object sender, RoutedEventArgs e)
         {
             if (this.display.Text == "+" || this.display.Text == "-" || this.display.Text == "*" || this.display.Text == "/" || this.display.Text == "%")
@@ -195,88 +89,80 @@ namespace calculator
             this.display.Text = this.display.Text + this.buttonDecimal.Content;
         }
 
-        /*private void button0_Click(object sender, RoutedEventArgs e)
+        
+        private void buttonAdd_Click(object sender, RoutedEventArgs e)
         {
-            if (this.display.Text == "+" || this.display.Text == "-" || this.display.Text == "*" || this.display.Text == "/" || this.display.Text == "%")
-            {
-                this.display2.Text = this.display.Text;
+                this.display2.Text = this.display.Text + this.buttonAdd.Content;
+                num1 = Convert.ToDecimal(display.Text);
                 this.display.Text = "";
-                this.display.Text = this.display.Text + this.button0.Content;
+                operation = '+';
+               
             }
-            else
-                this.display.Text = this.display.Text + this.button0.Content;
-        }*/
-
-             private void buttonAdd_Click(object sender, RoutedEventArgs e)
+            
+         private void buttonSubtract_Click(object sender, RoutedEventArgs e)
         {
-            num1 = float.Parse(display.Text);
-            this.display2.Text = this.display.Text + this.buttonAdd.Content;
-           this.display.Text = "";
-          //  this.display.Text = this.display.Text + this.buttonAdd.Content;
-
-            result = +num1;
-            operation = '+';
-        }
-
-        private void buttonSubtract_Click(object sender, RoutedEventArgs e)
-        {
-            num1 = float.Parse(display.Text);
             this.display2.Text = this.display.Text + this.buttonSubtract.Content;
+            num1 = Convert.ToDecimal(display.Text);
             this.display.Text = "";
-           // this.display.Text = this.display.Text + this.buttonSubtract.Content;
             operation = '-';
         }
 
         private void buttonMultiply_Click(object sender, RoutedEventArgs e)
-        {
-            num1 = float.Parse(display.Text);
-            this.display2.Text = this.display.Text + this.buttonMultiply.Content;
-            this.display.Text = "";
-           // this.display.Text = this.display.Text + this.buttonMultiply.Content;
-            operation = '*';
+         {
+             this.display2.Text = this.display.Text + this.buttonMultiply.Content;
+             num1 = Convert.ToDecimal(display.Text);
+             this.display.Text = "";
+             operation = '*';
+
         }
 
         private void buttonDivide_Click(object sender, RoutedEventArgs e)
         {
-            num1 = float.Parse(display.Text);
             this.display2.Text = this.display.Text + this.buttonDivide.Content;
+            num1 = Convert.ToDecimal(display.Text);
             this.display.Text = "";
-          //  this.display.Text = this.display.Text + this.buttonDivide.Content;
             operation = '/';
+
         }
         private void buttonPercent_Click(object sender, RoutedEventArgs e)
         {
-            num1 = float.Parse(display.Text);
-            this.display2.Text = this.display.Text + this.buttonPercent.Content;
+            this.display2.Text = this.display.Text + this.buttonAdd.Content;
+            num1 = Convert.ToDecimal(display.Text);
             this.display.Text = "";
-          //  this.display.Text = this.display.Text + this.buttonPercent.Content;
-            operation = '%';
-        }
+            operation = '+';
+            }
+        
         private void buttonResult_Click(object sender, RoutedEventArgs e)
         {
             this.display2.Text = this.display2.Text + this.display.Text;
-            //this.display.Text = "";
-            num2 = float.Parse(display.Text);
-            if (operation == '+')
-            {
-                result = num1 + num2;
-            }
-            else if (operation == '-')
-            {
-                result = num1 - num2;
-            }
-            else if (operation == '*')
-            {
-                result = num1 * num2;
-            }
-            else if (operation == '/')
-            {
-                result = num1 / num2;
-            }
-            else if (operation == '%')
-            {
-                result = num1 / num2*100;
-            }
+          
+           num2 = Convert.ToDecimal(display.Text);
+           if (operation == '+')
+           {
+               result = num1 + num2;
+             //  num1 = r;
+
+           }
+           else if (operation == '-')
+           {
+               result = num1 - num2;
+               //num1 = r;
+           }
+           else if (operation == '*')
+           {
+               result = num1 * num2;
+               //num1 = r;
+           }
+           else if (operation == '/')
+           {
+               result = num1 / num2;
+              // num1 = r;
+           }
+           else if (operation == '%')
+           {
+               result = num1 / num2 * 100;
+               //num1 = r;
+           }
             this.display.Text = result.ToString();
 
         }
@@ -286,7 +172,8 @@ namespace calculator
 
             this.display.Text = "";
             this.display2.Text = "";
-    }
+            result = 0;
+           }
 
         private void buttonDelete_Click(object sender, RoutedEventArgs e)
         {
@@ -303,6 +190,85 @@ namespace calculator
             }
         }
 
+
+        /*decimal operate(decimal num1,decimal num2, char operation)
+        {
+            decimal r=0;
+            
+            
+            if (operation == '+')
+            {
+                r = num1 + num2;
+                num1 = r; 
+                
+            }
+            else if (operation == '-')
+            {
+                r = num1 - num2;
+                num1 = r;
+            }
+            else if (operation == '*')
+            {
+                r = num1 * num2;
+                num1 = r;
+            }
+            else if (operation == '/')
+            {
+                r = num1 / num2;
+                num1 = r;
+            }
+            else if (operation == '%')
+            {
+                r = num1 / num2 * 100;
+                num1 = r;
+            }
+            return r;
+        }*/
+
+     /*   private void buttonMC_Click(object sender, RoutedEventArgs e)
+        {
+            MemoryStore = 0;
+            
+        }
+
+        private void buttonMR_Click(object sender, RoutedEventArgs e)
+        {
+            if (MemoryStore == 0)
+            {
+                MemoryStore = Convert.ToDecimal(display.Text);
+            }
+            else
+            {
+                this.display.Text = Convert.ToString(MemoryStore);
+            }
+        }
+
+        private void buttonMM_Click(object sender, RoutedEventArgs e)
+        {
+            if (MemoryStore == 0)
+            {
+                MemoryStore = Convert.ToDecimal(display.Text);
+            }
+            else
+            {
+                this.display.Text = Convert.ToString(MemoryStore);
+            }
+
+        }
+
+        private void buttonMP_Click(object sender, RoutedEventArgs e)
+        {
+            if (MemoryStore == 0)
+            {
+                MemoryStore = Convert.ToDecimal(display.Text);
+            }
+            else
+            {
+                this.display.Text = Convert.ToString(MemoryStore);
+            }
+
+        }
+       */ 
        
     }
 }
