@@ -22,9 +22,9 @@ namespace calculator
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        decimal num1 = 0,num2=0, result=0 ,i=0,sum=0;
+        decimal num1 = 0,num2=0, result=0 ;
       string str = "";
-        char operation;
+        string operation = string.Empty;
        // decimal operate(decimal num1, char operation);
         //decimal MemoryStore = 0;
        
@@ -54,28 +54,17 @@ namespace calculator
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-          
-            Button btn = (Button)sender;
-
-            str = btn.Name;
-            int len = str.Length;
-            char c = str[len-1];
-            if (this.display.Text == "+" || this.display.Text == "-" || this.display.Text == "*" || this.display.Text == "/" || this.display.Text == "%")
+            if(operation == "=")
             {
-               
-                this.display2.Text = this.display.Text;
                 this.display.Text = "";
-                this.display.Text = this.display.Text + c;
-                 
-            }
-            else
-            {
-                this.display.Text = this.display.Text + c;
-                
-            }
-          
-            
-        }
+                this.display2.Text = "";
+                operation = string.Empty;
+       }
+            Button btn = (Button)sender;
+            str = btn.Content.ToString();
+            this.display.Text = this.display.Text + str;
+            num2=Convert.ToDecimal(this.display.Text);
+         }
 
         private void buttonDecimal_Click(object sender, RoutedEventArgs e)
         {
@@ -92,79 +81,124 @@ namespace calculator
         
         private void buttonAdd_Click(object sender, RoutedEventArgs e)
         {
-                this.display2.Text = this.display.Text + this.buttonAdd.Content;
-                num1 = Convert.ToDecimal(display.Text);
-                this.display.Text = "";
-                operation = '+';
                
+            if(operation==string.Empty)
+            {
+                this.display2.Text = this.display.Text;
+                num1 = Convert.ToDecimal(display2.Text);
+                this.display2.Text = this.display2.Text + this.buttonAdd.Content;
+                this.display.Text = ""; 
+                num2 = 0;
+                operation = "+";
+            }
+            else
+            {
+                result = operate(num1,num2,operation);
+                num1 = result;
+                this.display2.Text = Convert.ToString(result) + this.buttonAdd.Content;
+                this.display.Text = "";
+                operation = "+";
+                num2 = 0;
+            }
             }
             
          private void buttonSubtract_Click(object sender, RoutedEventArgs e)
         {
-            this.display2.Text = this.display.Text + this.buttonSubtract.Content;
-            num1 = Convert.ToDecimal(display.Text);
-            this.display.Text = "";
-            operation = '-';
+
+            if (operation == string.Empty)
+            {
+                this.display2.Text = this.display.Text;
+                num1 = Convert.ToDecimal(display2.Text);
+                this.display2.Text = this.display2.Text + this.buttonSubtract.Content;
+                this.display.Text = "";
+                num2 = 0;
+                operation = "-";
+            }
+            else
+            {
+                result = operate(num1, num2, operation);
+                num1 = result;
+                this.display2.Text = Convert.ToString(result) + this.buttonSubtract.Content;
+                this.display.Text = "";
+                operation = "-";
+                num2 = 0;
+            }
         }
 
         private void buttonMultiply_Click(object sender, RoutedEventArgs e)
          {
-             this.display2.Text = this.display.Text + this.buttonMultiply.Content;
-             num1 = Convert.ToDecimal(display.Text);
-             this.display.Text = "";
-             operation = '*';
-
+             if (operation == string.Empty)
+             {
+                 this.display2.Text = this.display.Text;
+                 num1 = Convert.ToDecimal(display2.Text);
+                 this.display2.Text = this.display2.Text + this.buttonMultiply.Content;
+                 this.display.Text = "";
+                 num2 = 0;
+                 operation = "*";
+             }
+             else
+             {
+                 result = operate(num1, num2, operation);
+                 num1 = result;
+                 this.display2.Text = Convert.ToString(result) + this.buttonMultiply.Content;
+                 this.display.Text = "";
+                 operation = "*";
+                 num2 = 0;
+             }
         }
 
         private void buttonDivide_Click(object sender, RoutedEventArgs e)
         {
-            this.display2.Text = this.display.Text + this.buttonDivide.Content;
-            num1 = Convert.ToDecimal(display.Text);
-            this.display.Text = "";
-            operation = '/';
+            if (operation == string.Empty)
+            {
+                this.display2.Text = this.display.Text;
+                num1 = Convert.ToDecimal(display2.Text);
+                this.display2.Text = this.display2.Text + this.buttonDivide.Content;
+                this.display.Text = "";
+                num2 = 0;
+                operation = "/";
+            }
+            else
+            {
+                result = operate(num1, num2, operation);
+                num1 = result;
+                this.display2.Text = Convert.ToString(result) + this.buttonDivide.Content;
+                this.display.Text = "";
+                operation = "/";
+                num2 = 0;
+            }
 
         }
         private void buttonPercent_Click(object sender, RoutedEventArgs e)
         {
-            this.display2.Text = this.display.Text + this.buttonAdd.Content;
-            num1 = Convert.ToDecimal(display.Text);
-            this.display.Text = "";
-            operation = '+';
+            if (operation == string.Empty)
+            {
+                this.display2.Text = this.display.Text;
+                num1 = Convert.ToDecimal(display2.Text);
+                this.display2.Text = this.display2.Text + this.buttonPercent.Content;
+                this.display.Text = "";
+                num2 = 0;
+                operation = "/";
+            }
+            else
+            {
+                result = operate(num1, num2, operation);
+                num1 = result;
+                this.display2.Text = Convert.ToString(result) + this.buttonPercent.Content;
+                this.display.Text = "";
+                operation = "/";
+                num2 = 0;
+            }
             }
         
         private void buttonResult_Click(object sender, RoutedEventArgs e)
         {
+            
             this.display2.Text = this.display2.Text + this.display.Text;
-          
-           num2 = Convert.ToDecimal(display.Text);
-           if (operation == '+')
-           {
-               result = num1 + num2;
-             //  num1 = r;
-
-           }
-           else if (operation == '-')
-           {
-               result = num1 - num2;
-               //num1 = r;
-           }
-           else if (operation == '*')
-           {
-               result = num1 * num2;
-               //num1 = r;
-           }
-           else if (operation == '/')
-           {
-               result = num1 / num2;
-              // num1 = r;
-           }
-           else if (operation == '%')
-           {
-               result = num1 / num2 * 100;
-               //num1 = r;
-           }
+            result = operate(num1, num2, operation);
+            operation = "=";
             this.display.Text = result.ToString();
-
+            //operation = string.Empty;
         }
 
         private void buttonClear_Click(object sender, RoutedEventArgs e)
@@ -173,6 +207,8 @@ namespace calculator
             this.display.Text = "";
             this.display2.Text = "";
             result = 0;
+            num1 = 0;
+            num2 = 0;
            }
 
         private void buttonDelete_Click(object sender, RoutedEventArgs e)
@@ -191,84 +227,82 @@ namespace calculator
         }
 
 
-        /*decimal operate(decimal num1,decimal num2, char operation)
+        decimal operate(decimal num1,decimal num2,string operation)
         {
-            decimal r=0;
-            
-            
-            if (operation == '+')
+            decimal r=0;      
+            if (operation == "+")
             {
                 r = num1 + num2;
-                num1 = r; 
+                
                 
             }
-            else if (operation == '-')
+            else if (operation == "-")
             {
                 r = num1 - num2;
-                num1 = r;
+               
             }
-            else if (operation == '*')
+            else if (operation == "*")
             {
                 r = num1 * num2;
-                num1 = r;
+                
             }
-            else if (operation == '/')
+            else if (operation == "/")
             {
                 r = num1 / num2;
-                num1 = r;
+               
             }
-            else if (operation == '%')
+            else if (operation == "%")
             {
                 r = num1 / num2 * 100;
-                num1 = r;
+                
             }
             return r;
-        }*/
+        }
 
-     /*   private void buttonMC_Click(object sender, RoutedEventArgs e)
-        {
-            MemoryStore = 0;
+        /*   private void buttonMC_Click(object sender, RoutedEventArgs e)
+           {
+               MemoryStore = 0;
             
-        }
+           }
 
-        private void buttonMR_Click(object sender, RoutedEventArgs e)
-        {
-            if (MemoryStore == 0)
-            {
-                MemoryStore = Convert.ToDecimal(display.Text);
-            }
-            else
-            {
-                this.display.Text = Convert.ToString(MemoryStore);
-            }
-        }
+           private void buttonMR_Click(object sender, RoutedEventArgs e)
+           {
+               if (MemoryStore == 0)
+               {
+                   MemoryStore = Convert.ToDecimal(display.Text);
+               }
+               else
+               {
+                   this.display.Text = Convert.ToString(MemoryStore);
+               }
+           }
 
-        private void buttonMM_Click(object sender, RoutedEventArgs e)
-        {
-            if (MemoryStore == 0)
-            {
-                MemoryStore = Convert.ToDecimal(display.Text);
-            }
-            else
-            {
-                this.display.Text = Convert.ToString(MemoryStore);
-            }
+           private void buttonMM_Click(object sender, RoutedEventArgs e)
+           {
+               if (MemoryStore == 0)
+               {
+                   MemoryStore = Convert.ToDecimal(display.Text);
+               }
+               else
+               {
+                   this.display.Text = Convert.ToString(MemoryStore);
+               }
 
-        }
+           }
 
-        private void buttonMP_Click(object sender, RoutedEventArgs e)
-        {
-            if (MemoryStore == 0)
-            {
-                MemoryStore = Convert.ToDecimal(display.Text);
-            }
-            else
-            {
-                this.display.Text = Convert.ToString(MemoryStore);
-            }
+           private void buttonMP_Click(object sender, RoutedEventArgs e)
+           {
+               if (MemoryStore == 0)
+               {
+                   MemoryStore = Convert.ToDecimal(display.Text);
+               }
+               else
+               {
+                   this.display.Text = Convert.ToString(MemoryStore);
+               }
 
-        }
-       */ 
+           }
+          */ 
        
     }
 }
