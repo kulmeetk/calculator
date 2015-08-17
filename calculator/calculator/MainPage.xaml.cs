@@ -54,12 +54,6 @@ namespace calculator
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            if(operation == "=")
-            {
-                this.display.Text = "";
-                this.display2.Text = "";
-                operation = string.Empty;
-       }
             Button btn = (Button)sender;
             str = btn.Content.ToString();
             this.display.Text = this.display.Text + str;
@@ -193,12 +187,14 @@ namespace calculator
         
         private void buttonResult_Click(object sender, RoutedEventArgs e)
         {
+
+                result = operate(num1, num2, operation);
+                num1 = result;
+                this.display2.Text = Convert.ToString(result) ;
+                this.display.Text = "";
+           //     operation = "-";
+                num2 = 0;
             
-            this.display2.Text = this.display2.Text + this.display.Text;
-            result = operate(num1, num2, operation);
-            operation = "=";
-            this.display.Text = result.ToString();
-            //operation = string.Empty;
         }
 
         private void buttonClear_Click(object sender, RoutedEventArgs e)
